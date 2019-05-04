@@ -1,4 +1,4 @@
-let gridSize = 4;
+let gridSize = 16;
 
 const HEIGHT = 400;
 const WIDTH = 400;
@@ -16,9 +16,12 @@ function createGrid() {
       grid.style.gridArea = `${i}/${j}/span 1/span 1`;
       grid.style.width = `${gridSize}px`;
       grid.style.height = `${gridSize}px`;
+      grid.style.backgroundColor = "white";
+      grid.style.border = "1px solid black";
       container.appendChild(grid);
     }
   }
+
   function changeBackground() {
     this.style.backgroundColor = currentColor;
   }
