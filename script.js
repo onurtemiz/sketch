@@ -3,6 +3,8 @@ let gridSize = 16;
 const HEIGHT = 400;
 const WIDTH = 400;
 
+let erase = 0;
+
 function createGrid() {
   const container = document.getElementById("container");
   container.style.gridTemplate = `repeat(${Math.floor(
@@ -23,7 +25,11 @@ function createGrid() {
   }
 
   function changeBackground() {
-    this.style.backgroundColor = currentColor;
+    if (erase == 0) {
+      this.style.backgroundColor = currentColor;
+    } else {
+      this.style.backgroundColor = "white";
+    }
   }
 
   const grid = document.querySelectorAll(".grid");
@@ -33,7 +39,7 @@ function createGrid() {
   clearButton.addEventListener("click", clearBoard);
 
   function clearBoard() {
-    grid.forEach(grid => (grid.style.backgroundColor = "black"));
+    grid.forEach(grid => (grid.style.backgroundColor = "white"));
   }
 }
 
@@ -60,6 +66,17 @@ function deleteGrid() {
 }
 
 createGrid();
+
+const eraseButton = document.querySelector("#erase");
+eraseButton.addEventListener("click", eraseMod);
+
+function eraseMod() {
+  if (erase) {
+    erase = 0;
+  } else {
+    erase = 1;
+  }
+}
 
 const sizeButton = document.querySelector("#size");
 sizeButton.addEventListener("click", changeSizePropmt);
