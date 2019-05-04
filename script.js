@@ -82,12 +82,12 @@ const sizeButton = document.querySelector("#size");
 sizeButton.addEventListener("click", changeSizePropmt);
 
 function changeSizePropmt() {
-  let sizeInput = window.prompt("1-400 Arası Sayı Girin", 10);
+  let sizeInput = window.prompt("10-400 Arası Sayı Girin", 10);
   while (sizeInput != null || sizeInput != "") {
-    if (!isNaN(sizeInput)) {
+    if (!isNaN(sizeInput) && sizeInput < 401 && sizeInput > 9) {
       break;
     } else {
-      sizeInput = window.prompt("Lütfen Sadece 1-400 Arası Sayı Girin");
+      sizeInput = window.prompt("Lütfen Sadece 10-400 Arası Sayı Girin");
     }
   }
   deleteGrid();
