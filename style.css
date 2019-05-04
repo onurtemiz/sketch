@@ -1,0 +1,15 @@
+#container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.grid {
+  background-color: black;
+}
+
+button {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
